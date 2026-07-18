@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;800&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="module-header">
+        <div class="header-left">
+            <div class="back-btn" onclick="handleBackButton()">←</div>
+            <div class="module-title">Gear Vault</div>
+        </div>
+    </div>
+
+    <!-- টপ ন্যাভিগেশন: কন্ট্রোল প্যানেল থেকে আসা ক্যাটাগরিগুলো এখানে দেখাবে -->
+    <div class="category-selector" id="catTabsContainer">
+        <!-- JS দিয়ে ডাইনামিকভাবে আসবে -->
+    </div>
+
+    <!-- মূল বডি -->
+    <div class="vault-container" id="mainVaultContainer">
+        <div class="empty-message">
+            Loading gear vault...
+        </div>
+    </div>
+
+    <!-- Gear Modal (পপ-আপ) -->
+    <div id="gearModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 class="modal-title">Add Gear to Vault</h3>
+            <div class="input-group">
+                <label>Gear Name / Model</label>
+                <input type="text" id="gearName" placeholder="e.g. DJI Mini 4 Pro">
+            </div>
+            <div class="input-group">
+                <label>Brand / Notes (Optional)</label>
+                <input type="text" id="gearBrand" placeholder="e.g. DJI">
+            </div>
+            <div class="input-group">
+                <label>Weight (Grams) - Optional</label>
+                <input type="number" id="gearWeight" placeholder="e.g. 249">
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeModal('gearModal')">Cancel</button>
+                <button class="btn-save" onclick="saveGear()">Add to Vault</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="logic.js"></script>
+</body>
+</html>
